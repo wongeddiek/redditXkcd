@@ -11,17 +11,22 @@ function urlRequest(url, cFunction) {
   });
 }
 
+var xkcdData ='';
 
-var textData ='';
-urlRequest('https://www.explainxkcd.com/356', function(error, response, body){
-  if (error) {console.log('error: ' + error)}
+xkcdData = urlRequest('https://www.explainxkcd.com/356', function(error, response, body){
+  if (error) {
+    console.log('error: ' + error);
+  }
   const $ = cheerio.load(body);
-  $('p').each(function(){
-    textData += $(this).text() + '\n';
-    if ($(this).next().prop('tagName') === 'H2') {
+  var data = '';
+  $('p').each( function() {
+    data += $(this).text() + '\n';
+    if ($(this).next().prop('tagName') !== 'P') {
       return false;
     }
   });
+  return data;
 });
 
-console.log(textData);
+//xkcdData is undefined because urlRequest() is asynchronous.
+console.log(xkcdData);
