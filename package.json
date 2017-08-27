@@ -1,0 +1,16 @@
+{
+  "name": "redditxkcd",
+  "version": "1.0.0",
+  "description": "redditxkcd",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "wong.eddiek@arrayschool.com",
+  "license": "ISC",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.2",
+    "express": "^4.15.4",
+    "request": "^2.81.0"
+  }
+}
