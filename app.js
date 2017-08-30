@@ -59,9 +59,9 @@ commentStream.on("comment", function(comment) {
       const $ = cheerio.load(body);
       var data = '';
       //compile the <p> tag text in the html
-      $('p').each( function() {
+      $('#Explanation').parent().nextAll('p').each( function() {
         data += $(this).text() + '\n';
-        if ($(this).next().prop('tagName') !== 'P') {
+        if ($(this).next().prop('tagName') === 'H2') {
           return false;
         }
       });
