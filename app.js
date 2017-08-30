@@ -1,8 +1,5 @@
 // const express = require('express');
 // const app = express();
-//raw.js is a reddit api wrapper for node
-// const rawjs = require('raw.js');
-// const reddit = new rawjs("raw.js example script");
 
 const request = require('request');
 //cheerio parses html markups and implement JQuery to select DOM elements
@@ -11,15 +8,11 @@ const cheerio = require('cheerio');
 const snoowrap = require('snoowrap');
 //using snoostorm for reddit comment streams
 const snoostorm = require("snoostorm");
+//read/write local json file
+const fs = require('fs');
 
 //creating client credentials
-const clientCred = {
-  userAgent: 'thunzBot',
-  clientId: '3bC-WyZVJOJVJw',
-  clientSecret: 'Upp9fSXTM8svRrbyZA4Aa4Htf4s',
-  username: 'thunzBot',
-  password: 'array!bot123'
-};
+const clientCred = JSON.parse(fs.readFileSync('credentials.json'));
 
 //using snoowrap
 const r = new snoowrap(clientCred);
