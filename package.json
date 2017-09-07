@@ -6,12 +6,14 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wongeddiek/redditXkcd.git"
+  },
   "author": "wong.eddiek@arrayschool.com",
   "license": "ISC",
   "dependencies": {
     "cheerio": "^1.0.0-rc.2",
-    "express": "^4.15.4",
-    "raw.js": "^0.6.0",
     "request": "^2.81.0",
     "snoostorm": "0.0.5",
     "snoowrap": "^1.14.2"
